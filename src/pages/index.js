@@ -7,6 +7,8 @@ import HeroImage from "../components/hero_image";
 import PlaceDescription from "../components/place_description";
 import ContactSection from "../components/contact_section";
 import ClinicList from "../components/clinic_list";
+import optionalText from "../components/optionalText";
+import OptionalText from "../components/optionalText";
 // markup
 const IndexPage = ({
   data: {
@@ -23,6 +25,7 @@ const IndexPage = ({
     opisPrzychodni: description,
     linkFb,
     eRejestracjaLink: eRegisterLink,
+    optionalText,
   } = contactData;
   console.log(eRegisterLink);
   return (
@@ -35,8 +38,9 @@ const IndexPage = ({
         FBLink={linkFb}
         eRegisterLink={eRegisterLink}
       />
+      {optionalText ? <OptionalText text={optionalText} /> : null}
       <PlaceDescription description={description} />
-      <ClinicList clinicList={clinicList} />
+      <ClinicList clinicList={clinicList.reverse()} />
       <ContactSection
         FBLink={linkFb}
         phoneNumber={phoneNumber}
@@ -97,6 +101,7 @@ export const query = graphql`
         opisPrzychodni
         telefon
         eRejestracjaLink
+        optionalText
       }
     }
   }

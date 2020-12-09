@@ -4,7 +4,6 @@ import ReactMarkdown from "react-markdown";
 const StyledContainer = styled.div`
   padding: 60px 0;
   background-color: rgba(205, 107, 93, 1);
-  margin-top: 100px;
 `;
 
 const StyledContent = styled.div`

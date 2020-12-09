@@ -6,7 +6,7 @@ const InfoButton = styled.a`
   color: white;
   padding: 10px 25px;
   background-color: black;
-  font-size: 20px;
+  font-size: 15px;
   font-weight: 400;
   box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.2);
   border: 1px solid black;

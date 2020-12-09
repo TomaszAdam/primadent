@@ -17,7 +17,7 @@ const StyledMenuItem = styled.div`
 `;
 const MenuItem = ({ link, text }) => {
   let isLocal = true;
-  if (link.search("/") == -1) {
+  if (link.search("/") === -1) {
     link = "#".concat(link);
     isLocal = true;
   } else {

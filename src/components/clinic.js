@@ -11,10 +11,24 @@ const StyledWrapper = styled.div`
   display: grid;
   grid-template-columns: 0 1fr 1fr 1fr;
   margin-top: 24px;
+
+  @media (max-width: 800px) {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    & div {
+      margin-top: 20px;
+    }
+  }
 `;
 
 const StyledImage = styled.img`
-  max-width: 360px;
+  max-width: 100%;
+  height: auto;
+
+  @media (max-width: 800px) {
+    max-width: 50%;
+  }
 `;
 
 const RoomList = styled.div`
@@ -47,9 +61,18 @@ const Anchor = styled.div`
   transform: translateY(-200px);
 `;
 
-const StyledNamePart = styled.div``;
-const StyledRoomPart = styled.div``;
-const StyledHoursPart = styled.div``;
+const StyledNamePart = styled.div`
+  flex-shrink: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+`;
+const StyledRoomPart = styled.div`
+  flex-shrink: 2;
+`;
+const StyledHoursPart = styled.div`
+  flex-shrink: 3;
+`;
 const Clinic = ({
   clinicData: {
     node: {

@@ -8,7 +8,9 @@ import HeroContact from "./hero_contact_info";
 const StyledBackground = styled.section`
   background-image: url("tlo1.jpg");
   background-repeat: no-repeat;
-  background-size: 100%;
+  background-position: center;
+  background-size: cover;
+
   height: 100vh;
   width: 100vw;
   position: relative;
@@ -27,7 +29,7 @@ const StyledInfoDiv = styled.div`
 `;
 
 const StyledParagraph = styled.h1`
-  font-size: 30px;
+  font-size: 26px;
   font-weight: normal;
   margin-bottom: 40px;
   line-height: 1.1;

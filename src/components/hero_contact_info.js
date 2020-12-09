@@ -6,6 +6,12 @@ const StyledContainer = styled.div`
   max-width: 1180px;
   width: 100%;
   justify-content: space-between;
+  @media (max-width: 1000px) {
+    flex-direction: column;
+    align-items: flex-start;
+    width: fit-content;
+    margin: 0 auto;
+  }
 `;
 const ContactItem = styled.div`
   display: flex;
@@ -17,7 +23,7 @@ const ContactItem = styled.div`
   }
 
   & h3 {
-    font-size: 25px;
+    font-size: 22px;
     font-weight: normal;
   }
 `;
