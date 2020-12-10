@@ -15,7 +15,7 @@ const StyledWrapper = styled.div`
   @media (max-width: 800px) {
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: flex-start;
     & div {
       margin-top: 20px;
     }
@@ -63,15 +63,20 @@ const Anchor = styled.div`
 
 const StyledNamePart = styled.div`
   flex-shrink: 1;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  text-align: left;
+  ul {
+    margin-bottom: 48px;
+  }
 `;
 const StyledRoomPart = styled.div`
   flex-shrink: 2;
 `;
 const StyledHoursPart = styled.div`
   flex-shrink: 3;
+`;
+
+const StyledMenuItem = styled(MenuItem)`
+  margin-left: 0;
 `;
 const Clinic = ({
   clinicData: {
@@ -102,7 +107,7 @@ const Clinic = ({
         </ul>
         <br />
         {eRejestracja ? (
-          <MenuItem
+          <StyledMenuItem
             text="E-REJESTRACJA"
             link="https://primadent.optimed24.pl/olr/page/index.xhtml"
           />

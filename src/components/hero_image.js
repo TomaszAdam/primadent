@@ -13,6 +13,7 @@ const StyledBackground = styled.section`
 
   height: 100vh;
   width: 100vw;
+  max-width: 100%;
   position: relative;
   background-attachment: fixed;
 `;

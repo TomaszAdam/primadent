@@ -17,6 +17,9 @@ const InfoButton = styled.a`
     background-color: transparent;
     color: black;
   }
+  @media (max-width: 450px) {
+    margin: 0 8px;
+  }
 `;
 
 const ImportantInfoButton = ({ link }) => {

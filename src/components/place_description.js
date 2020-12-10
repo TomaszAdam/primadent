@@ -8,8 +8,8 @@ const StyledContainer = styled.div`
 
 const StyledContent = styled.div`
   max-width: 1186px;
-  width: 100%;
   margin: 0 auto;
+  padding: 0 16px;
   & h2 {
     text-align: center;
     font-weight: normal;

@@ -4,6 +4,9 @@ import { Link } from "gatsby";
 const StyledContainer = styled.footer`
   background-color: rgba(242, 242, 242, 1);
   padding: 60px 0;
+  @media (max-width: 600px) {
+    padding: 0 16px;
+  }
 `;
 
 const StyledContent = styled.div`
@@ -37,7 +40,8 @@ const StyledImage = styled.img`
 
 const StyledMap = styled.iframe`
   height: 350px;
-  width: 80vw;
+  max-width: 1920px;
+  width: 100vw;
 `;
 
 const ContactSection = ({ address, phoneNumber, email, FBLink }) => {

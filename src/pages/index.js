@@ -31,7 +31,7 @@ const IndexPage = ({
   return (
     <main>
       <Layout></Layout>
-      <NavBar links={menuList} />
+      <NavBar links={menuList} isMainPage={true} />
       <HeroImage
         address={address}
         phoneNumber={phoneNumber}

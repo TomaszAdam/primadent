@@ -21,6 +21,11 @@ const StyledContent = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+  padding: 0 8px;
+  @media (max-width: 800px) {
+    align-items: flex-start;
+    padding: 0 16px;
+  }
 `;
 const ClinicList = ({ clinicList }) => {
   return (

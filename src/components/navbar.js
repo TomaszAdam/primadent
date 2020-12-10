@@ -102,7 +102,7 @@ const HamburgerIcon = styled.div`
   }
 `;
 
-const NavBar = ({ links }) => {
+const NavBar = ({ links, isMainPage }) => {
   const [isExpanded, setExpanded] = useState(false);
   console.log(links);
   return (
@@ -117,18 +117,37 @@ const NavBar = ({ links }) => {
         <div></div>
       </HamburgerIcon>
       <StyledMenu isExpanded={isExpanded}>
-        <MenuItem link="HOME" text="HOME" />
+        {isMainPage ? (
+          <MenuItem link="HOME" text="HOME" />
+        ) : (
+          <MenuItem link="/" text="STRONA GŁÓWNA" />
+        )}
 
-        {links
-          ? links.map(({ nazwaMenu, linkMenu }, index) => (
-              <MenuItem key={index} link={linkMenu} text={nazwaMenu} />
-            ))
+        {isMainPage
+          ? links
+            ? links.map(({ nazwaMenu, linkMenu }, index) => (
+                <MenuItem key={index} link={linkMenu} text={nazwaMenu} />
+              ))
+            : null
           : null}
-        <MenuItem link="CONTACT" text="KONTAKT" />
-        <MenuItem link="" text="E-RECEPTA" />
+        {isMainPage ? (
+          <>
+            {" "}
+            <MenuItem link="CONTACT" text="KONTAKT" />
+            <MenuItem link="/e-recepta" text="E-RECEPTA" />
+          </>
+        ) : null}
       </StyledMenu>
     </Navbar>
   );
 };
 
 export default NavBar;
+
+// {links
+//           ? links.map(({ nazwaMenu, linkMenu }, index) => (
+//               <MenuItem key={index} link={linkMenu} text={nazwaMenu} />
+//             ))
+//           : null}
+//         <MenuItem link="CONTACT" text="KONTAKT" />
+//         <MenuItem link="/e-recepta" text="E-RECEPTA" />
