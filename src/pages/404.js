@@ -6,8 +6,6 @@ import logo from "../../images/logo.png";
 import tlo1 from "../../images/tlo1.jpg";
 
 const StyledWrapper = styled.div`
-  width: min-content;
-  padding: 64px;
   margin: 0 auto;
   display: flex;
   flex-direction: column;
