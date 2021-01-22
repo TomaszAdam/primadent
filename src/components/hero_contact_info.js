@@ -1,6 +1,5 @@
 import React from "react";
 import styled from "styled-components";
-import { Link } from "gatsby";
 const StyledContainer = styled.div`
   display: flex;
   max-width: 1180px;
@@ -11,6 +10,7 @@ const StyledContainer = styled.div`
     align-items: flex-start;
     width: fit-content;
     margin: 0 auto;
+    padding: 0 8px;
   }
 `;
 const ContactItem = styled.div`
@@ -20,11 +20,20 @@ const ContactItem = styled.div`
     margin-right: 40px;
     width: 75px;
     height: 75px;
+
+    @media (max-width: 760px) {
+      width: 50px;
+      height: 50px;
+    }
   }
 
   & h3 {
     font-size: 22px;
     font-weight: normal;
+
+    @media (max-width: 760px) {
+      font-size: 18px;
+    }
   }
 `;
 
@@ -51,7 +60,7 @@ const HeroContact = ({ address, phoneNumber, eRegisterLink }) => {
   return (
     <StyledContainer>
       <ContactItem>
-        <img src="telephone_icon.png" />
+        <img alt="telefon ikona" src="telephone_icon.png" />
         <h3>
           Zadzwoń
           <br />{" "}
@@ -61,7 +70,7 @@ const HeroContact = ({ address, phoneNumber, eRegisterLink }) => {
         </h3>
       </ContactItem>
       <ContactItem>
-        <img src="email_icon.png" />
+        <img alt="email ikona" src="email_icon.png" />
         <h3>
           Wejdź na <br></br>
           <StyledRegisterLink target="blank" href={eRegisterLink}>
@@ -70,7 +79,7 @@ const HeroContact = ({ address, phoneNumber, eRegisterLink }) => {
         </h3>
       </ContactItem>
       <ContactItem>
-        <img src="person_icon.png" />
+        <img alt="człowiek ikona" src="person_icon.png" />
         <h3>
           Odwiedź nas <br></br> <strong>{address}</strong>
         </h3>

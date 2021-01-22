@@ -11,27 +11,29 @@ const StyledWrapper = styled.div`
 `;
 const DayHours = ({ day, open, close }) => {
   const convertDay = (day) => {
+    day = day.toLowerCase();
+
     switch (day) {
       case "poniedzialek":
       case "poniedziałek":
       case "pon":
-        return "Pon";
+        return "pon";
 
       case "wtorek":
       case "wt":
-        return "Wt";
+        return "wt";
       case "środa":
       case "sroda":
       case "sr":
       case "śr":
-        return "Śr";
+        return "śr";
       case "czwartek":
       case "czw":
-        return "Czw";
+        return "czw";
       case "piątek":
       case "piatek":
       case "pt":
-        return "Pt";
+        return "pt";
       case "nd":
       case "niedziela":
         return "nd";
@@ -39,7 +41,7 @@ const DayHours = ({ day, open, close }) => {
       case "sb":
         return "sb";
       default:
-        return;
+        return day;
     }
   };
   return (

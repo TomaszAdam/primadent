@@ -6,6 +6,10 @@ import Clinic from "./clinic";
 const StyledWrapper = styled.section`
   padding: 30px 0 0 0;
   margin-bottom: 30px;
+  overflow-x: hidden;
+  @media (max-width: 400px) {
+    overflow-x: auto;
+  }
 `;
 
 const StyledH2 = styled.h2`
@@ -24,7 +28,7 @@ const StyledContent = styled.div`
   padding: 0 8px;
   @media (max-width: 800px) {
     align-items: flex-start;
-    padding: 0 16px;
+    padding: 0 24px;
   }
 `;
 const ClinicList = ({ clinicList }) => {

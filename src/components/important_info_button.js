@@ -1,11 +1,11 @@
 import React from "react";
 import styled from "styled-components";
-import { Link } from "gatsby";
+
 const InfoButton = styled.a`
   text-decoration: none;
   color: white;
   padding: 10px 25px;
-  background-color: black;
+  background-color: rgba(0, 0, 0, 0.7);
   font-size: 15px;
   font-weight: 400;
   box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.2);
@@ -17,8 +17,14 @@ const InfoButton = styled.a`
     background-color: transparent;
     color: black;
   }
+
+  @media (max-width: 1000px) and (max-height: 600px) {
+    margin-bottom: 0;
+  }
   @media (max-width: 450px) {
     margin: 0 8px;
+    width: 70%;
+    text-align: center;
   }
 `;
 

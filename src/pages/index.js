@@ -1,5 +1,8 @@
+import "react-app-polyfill/ie11";
 import * as React from "react";
 import { graphql } from "gatsby";
+import { CookiesProvider } from "react-cookie";
+import styled from "styled-components";
 // components
 import Layout from "../components/layout.js";
 import NavBar from "../components/navbar.js";
@@ -7,9 +10,17 @@ import HeroImage from "../components/hero_image";
 import PlaceDescription from "../components/place_description";
 import ContactSection from "../components/contact_section";
 import ClinicList from "../components/clinic_list";
-import optionalText from "../components/optionalText";
+import UpArrow from "../components/up_arrow";
 import OptionalText from "../components/optionalText";
+// import CookieBar from "../components/CookieBar";
 // markup
+
+const Content = styled.div`
+  width: 100%;
+  background-color: white;
+`;
+
+const StyledMain = styled.main``;
 const IndexPage = ({
   data: {
     allDatoCmsKontakt: { nodes },
@@ -27,27 +38,33 @@ const IndexPage = ({
     eRejestracjaLink: eRegisterLink,
     optionalText,
   } = contactData;
-  console.log(eRegisterLink);
+
   return (
-    <main>
-      <Layout></Layout>
-      <NavBar links={menuList} isMainPage={true} />
-      <HeroImage
-        address={address}
-        phoneNumber={phoneNumber}
-        FBLink={linkFb}
-        eRegisterLink={eRegisterLink}
-      />
-      {optionalText ? <OptionalText text={optionalText} /> : null}
-      <PlaceDescription description={description} />
-      <ClinicList clinicList={clinicList.reverse()} />
-      <ContactSection
-        FBLink={linkFb}
-        phoneNumber={phoneNumber}
-        email={email}
-        address={address}
-      />
-    </main>
+    <CookiesProvider>
+      <StyledMain>
+        <Layout></Layout>
+        <NavBar links={menuList} isMainPage={true} />
+        <HeroImage
+          address={address}
+          phoneNumber={phoneNumber}
+          FBLink={linkFb}
+          eRegisterLink={eRegisterLink}
+        />
+        <Content>
+          {optionalText ? <OptionalText text={optionalText} /> : null}
+          <PlaceDescription description={description} />
+          <ClinicList clinicList={clinicList} />
+          <ContactSection
+            FBLink={linkFb}
+            phoneNumber={phoneNumber}
+            email={email}
+            address={address}
+          />
+          {/* <CookieBar /> */}
+          <UpArrow />
+        </Content>
+      </StyledMain>
+    </CookiesProvider>
   );
 };
 
@@ -55,27 +72,19 @@ export default IndexPage;
 
 export const query = graphql`
   {
-    allDatoCmsMenu {
+    allDatoCmsMenu(sort: { fields: kolejnosc, order: ASC }) {
       nodes {
         nazwaMenu
         linkMenu
+        kolejnosc
       }
     }
-    allDatoCmsPoradnie {
+    allDatoCmsPoradnie(sort: { fields: order, order: ASC }) {
       edges {
         node {
-          dniOtwarcia {
-            dzienTyogdnia
-            otwarcie
-            zamkniecie
-          }
           eRejestracja
           gabinety {
             nrGabinetu
-          }
-          lekarze {
-            imieINazwisko
-            specjalizacjaLekarza
           }
           nfz
           wizytyPrywatne
@@ -89,6 +98,15 @@ export const query = graphql`
           }
           opisPrzychodni {
             dziedzinaPrzychodni
+          }
+          lekarze {
+            imieINazwisko
+            specjalizacjaLekarza
+          }
+          dniOtwarcia {
+            dzienTyogdnia
+            otwarcie
+            zamkniecie
           }
         }
       }

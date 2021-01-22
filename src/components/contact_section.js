@@ -1,11 +1,11 @@
 import React from "react";
 import styled from "styled-components";
-import { Link } from "gatsby";
+
 const StyledContainer = styled.footer`
   background-color: rgba(242, 242, 242, 1);
   padding: 60px 0;
   @media (max-width: 600px) {
-    padding: 0 16px;
+    padding: 0 24px;
   }
 `;
 
@@ -13,6 +13,7 @@ const StyledContent = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+  text-align: center;
   & p {
     margin: 0 0 6px 0;
     font-size: 16px;

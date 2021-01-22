@@ -17,8 +17,50 @@ module.exports = {
         failOnError: true,
       },
     },
+    {
+      resolve: "gatsby-plugin-firebase",
+      options: {
+        credentials: {
+          apiKey: "AIzaSyAwzp6Zp3cV98EjVO81buDmIlwsn-JfL0M",
+          authDomain: "primadent-d96de.firebaseapp.com",
+          databaseURL:
+            "https://primadent-d96de-default-rtdb.europe-west1.firebasedatabase.app",
+          projectId: "primadent-d96de",
+          storageBucket: "primadent-d96de.appspot.com",
+          messagingSenderId: "375690770066",
+          appId: "1:375690770066:web:ac1e660985944b14e8584b",
+          measurementId: "G-VCL1MJF0NR",
+        },
+      },
+    },
+    {
+      resolve: `gatsby-plugin-create-client-paths`,
+      options: { prefixes: [`/panel/*`] },
+    },
     `gatsby-plugin-sharp`,
     `gatsby-transformer-sharp`,
     "gatsby-image",
+    {
+      resolve: `gatsby-plugin-gdpr-cookies`,
+      options: {
+        googleAnalytics: {
+          trackingId: null, // leave empty if you want to disable the tracker
+          cookieName: "gatsby-gdpr-google-analytics", // default
+          anonymize: true, // default
+          allowAdFeatures: false, // default
+        },
+        googleTagManager: {
+          trackingId: null, // leave empty if you want to disable the tracker
+          cookieName: "gatsby-gdpr-google-tagmanager", // default
+          dataLayerName: "dataLayer", // default
+        },
+        facebookPixel: {
+          pixelId: null, // leave empty if you want to disable the tracker
+          cookieName: "gatsby-gdpr-facebook-pixel", // default
+        },
+        // defines the environments where the tracking should be available  - default is ["production"]
+        environments: ["production", "development"],
+      },
+    },
   ],
 };
