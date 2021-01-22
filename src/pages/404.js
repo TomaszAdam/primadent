@@ -10,7 +10,7 @@ const StyledWrapper = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  text-align: center;
+
   & h1 {
     font-size: 60px;
     margin: 8px 0;
