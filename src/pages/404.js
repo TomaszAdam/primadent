@@ -6,7 +6,7 @@ import logo from "../../images/logo.png";
 import tlo1 from "../../images/tlo1.jpg";
 
 const StyledWrapper = styled.div`
-  margin: 0 auto;
+  /* margin: 0 auto;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -29,7 +29,7 @@ const StyledWrapper = styled.div`
         text-decoration: underline;
       }
     }
-  }
+  } */
 `;
 
 const StyledImage = styled.img``;
