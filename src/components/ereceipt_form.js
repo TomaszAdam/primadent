@@ -128,8 +128,18 @@ const EReceiptForm = ({ extraFields }) => {
     } else {
       setError({ lastName: "" });
     }
+    if (phone === "" || phone.length === 9) {
+      setError({
+        phone:
+          "Nr telefonu musi mieć 9 znaków (proszę nie podawać nr kierunkowego)",
+      });
+      window.scrollTo(0, event.target[3].offsetTop + 100);
+      return null;
+    } else {
+      setError({});
+    }
 
-    if (phone === "" || !phone.match(/^(?:[+\d].*\d|\d)$/)) {
+    if (!phone.match(/^(?:[+\d].*\d|\d)$/)) {
       setError({ phone: "Nr telefonu może zawierać tylko cyfry" });
       window.scrollTo(0, event.target[3].offsetTop + 100);
       return null;

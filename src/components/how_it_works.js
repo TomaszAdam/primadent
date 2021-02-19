@@ -29,11 +29,16 @@ const HowItWorks = () => {
     <StyledContainer>
       <StyledHeader>Jak to działa?</StyledHeader>
       <StyledText>
-        Have my breakfast spaghetti yarn cereal boxes make for five star
-        accommodation slap owner's face at 5am until human fills food dish jump
-        on counter removed by human jump on counter again removed by human meow
-        before jumping on counter this time to let the human know am coming back
-        mark territory.
+        Aby zamówić e-receptę, należy wypełnić formularz on-line, po wysłaniu
+        którego otrzymasz potwierdzenie złożenia zapotrzebowania, wraz z
+        identyfikatorem zamówienia. Weryfikacji dokonuje w pierwszej kolejności
+        personel pomocniczy, a następnie lekarz. W razie wątpliwości lub
+        uzupełnienia informacji skontaktujemy się z Tobą telefonicznie lub
+        poprzez e-mail. Jeśli wszystko jest w porządku, wyślemy Ci link
+        umożliwiający dokonanie płatności za usługę. Po otrzymaniu płatności,
+        lekarz wystawi e-receptę i na telefon komórkowy otrzymasz kod recepty,
+        który wraz z nr pesel posłuży do weryfikacji e-recepty i odbioru leku w
+        dowolnej aptece.
       </StyledText>
       {/* <Line /> */}
       {/* <StyledHeader>Coś tu se wpisze</StyledHeader>
