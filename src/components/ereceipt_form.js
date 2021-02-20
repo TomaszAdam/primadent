@@ -128,7 +128,7 @@ const EReceiptForm = ({ extraFields }) => {
     } else {
       setError({ lastName: "" });
     }
-    if (phone === "" || phone.length === 9) {
+    if (phone === "" || phone.length !== 9) {
       setError({
         phone:
           "Nr telefonu musi mieć 9 znaków (proszę nie podawać nr kierunkowego)",
