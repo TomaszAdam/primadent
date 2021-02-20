@@ -158,7 +158,6 @@ const ReceiptList = ({ data, currentView }) => {
   const [urgent, setUrgent] = useState(false);
   const [sortType, setSortType] = useState("desc");
 
-  console.log(list);
   const setList = () => {
     return data
       ? data.map((receipt) => {
@@ -199,7 +198,6 @@ const ReceiptList = ({ data, currentView }) => {
 
       // 3.get filtered list
       if (data && filter !== "") {
-        console.log(data);
         data = filterItems(data);
       }
     }

@@ -65,7 +65,6 @@ const AcceptButton = ({ receipt }) => {
       },
     })
       .then((res) => {
-        console.log(res);
         // WE HAVE A TOKEN
         axios({
           method: "POST",
