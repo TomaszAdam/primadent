@@ -4,10 +4,10 @@ import { AuthContext } from "../services/authProvider";
 import { firestore } from "../services/firebase_services";
 
 //components
-import { convertDate } from "./admin_panel/functions/convert_date";
+
 import SideNav from "./admin_panel/side_nav";
 import Spinner from "./spinner";
-import ReceiptList from "./admin_panel/receipt_list";
+
 import RightPanel from "./admin_panel/right_panel";
 export const DataContext = React.createContext();
 

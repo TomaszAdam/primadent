@@ -62,5 +62,17 @@ module.exports = {
         environments: ["production", "development"],
       },
     },
+    {
+      resolve: `gatsby-plugin-manifest`,
+      options: {
+        name: `primadentwrzesnia`,
+        short_name: `primadent`,
+        start_url: `/`,
+        background_color: `#f7f0eb`,
+        theme_color: `#a2466c`,
+        display: `standalone`,
+        icon: "static/favicon_primadent.png",
+      },
+    },
   ],
 };

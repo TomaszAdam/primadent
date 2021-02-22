@@ -55,7 +55,9 @@ const ButtonRow = styled.div`
 `;
 const Page404 = () => {
   return (
-    <StyledWrapper>
+    <div
+      style={{ display: "flex", flexDirection: "column", alignItems: "center" }}
+    >
       <Layout />
       <StyledImage src={logo} alt="logo primadent" />
       <h1>404</h1>
@@ -64,11 +66,9 @@ const Page404 = () => {
         adresu strony, w przypadku pytań zapraszamy do
         <Link to="/#CONTACT"> kontaktu</Link>
       </p>
-      <ButtonRow>
-        <StyledButton to="/">Strona główna</StyledButton>
-        <StyledButton to="/e-recepta">Formularz E-recepty</StyledButton>
-      </ButtonRow>
-    </StyledWrapper>
+
+      <StyledButton to="/">Strona główna</StyledButton>
+    </div>
   );
 };
 

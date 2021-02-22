@@ -4,7 +4,6 @@ import { DataContext } from "../admin_panel";
 // components
 import logo from "../../../images/logo.png";
 import ReceiptList from "./receipt_list";
-import ReceiptItem from "./receipt_item";
 
 const Wrapper = styled.div`
   width: 100%;

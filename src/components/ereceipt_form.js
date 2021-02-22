@@ -85,7 +85,7 @@ const EReceiptForm = ({ extraFields }) => {
   const [showMessage, setMessage] = useState(false);
   const [isLoading, setLoading] = useState(false);
   const [submitError, setSubmitError] = useState(false);
-  const [extraData, setExtraData] = useState([{ name: "", value: "" }]);
+
   const [firstName, setFirstName] = useState("");
   const [lastName, setlastName] = useState("");
   const [email, setEmail] = useState("");

@@ -18,12 +18,6 @@ const StyledText = styled.p`
   opacity: 0.5;
 `;
 
-const Line = styled.hr`
-  color: white;
-  width: 80%;
-  margin-left: 0;
-  opacity: 0.5;
-`;
 const HowItWorks = () => {
   return (
     <StyledContainer>
