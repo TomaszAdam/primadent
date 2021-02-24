@@ -13,10 +13,10 @@ const Panel = () => {
     <>
       <Layout />
       <AuthProvider>
-        <Router>
-          <PrivateRoute path="/panel/admin" component={AdminPanel} />
+        <Router basepath="/panel">
+          <PrivateRoute path="/admin" component={AdminPanel} />
 
-          <Login path="/panel/login" />
+          <Login path="/login" />
         </Router>
       </AuthProvider>
     </>
