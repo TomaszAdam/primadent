@@ -252,7 +252,7 @@ const ReceiptList = ({ data, currentView }) => {
                 ? () => setSortType("asc")
                 : () => setSortType("desc")
             }
-            rotate={sortType === "desc"}
+            rotate={sortType === "desc" ? 1 : 0}
             header
           >
             Data zapytania{" "}

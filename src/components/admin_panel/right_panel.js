@@ -52,6 +52,8 @@ const RightPanel = ({ currentView }) => {
         return <span>E-RECEPTY ZAKOŃCZONE I WYSTAWIONE PRZEZ LEKARZA</span>;
       case "new":
         return <span> NOWE E-RECEPTY OCZEKUJĄCE NA ROZPATRZENIE</span>;
+      case "deleted":
+        return <span>E-RECEPTY USUNIĘTE</span>;
       default:
         return null;
     }

@@ -200,6 +200,15 @@ const SideNav = ({ currentUser, currentView, setCurrentView }) => {
               {currentView === "rejected" ? <StyledFolder /> : <ClosedFolder />}
               odrzucone
             </StyledItemList>
+            <StyledItemList
+              active={currentView === "deleted"}
+              onClick={() => {
+                handleClick("deleted");
+              }}
+            >
+              {currentView === "deleted" ? <StyledFolder /> : <ClosedFolder />}
+              usunięte
+            </StyledItemList>
           </StyledList>
         </div>
         <StyledLine />

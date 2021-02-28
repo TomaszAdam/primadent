@@ -140,6 +140,8 @@ const ReceiptItem = ({ receipt, currentView, showUrgent }) => {
             <DeleteButton receipt={receipt} />
           </ButtonRow>
         );
+      case "deleted":
+        return <ButtonRow></ButtonRow>;
       default:
         return null;
     }
@@ -209,13 +211,17 @@ const ReceiptItem = ({ receipt, currentView, showUrgent }) => {
             <StyledRichTekst>{receipt.amount} zł</StyledRichTekst>
           </StyledTextWrapper>
         ) : null}
-
-        {/* {receipt.extraData.map((data, index) => (
-          <StyledTextWrapper key={index}>
-            <TextLabel>{data.name}</TextLabel>{" "}
-            <StyledRichTekst>{data.value}</StyledRichTekst>
+        {receipt.status === "deleted" ? (
+          <StyledTextWrapper>
+            <TextLabel>Data usunięcia</TextLabel>
+            <StyledRichTekst>{convertDate(receipt.deleteDate)}</StyledRichTekst>
+            <TextLabel>powód usunięcia</TextLabel>
+            <StyledRichTekst>
+              {receipt.deleteReason || "brak powodu"}{" "}
+            </StyledRichTekst>
           </StyledTextWrapper>
-        ))} */}
+        ) : null}
+
         {setActionButtons()}
       </MoreInfo>
     </StyledRow>

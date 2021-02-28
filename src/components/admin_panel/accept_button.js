@@ -4,7 +4,7 @@ import { firestore } from "../../services/firebase_services";
 import axios from "axios";
 import { toast } from "react-toastify";
 import PopUp from "./pop_up_screen";
-
+import CurrencyInput from "react-currency-input-field";
 import ErrorMessage from "../error_message";
 const StyledForm = styled.form`
   display: flex;
@@ -175,14 +175,24 @@ const AcceptButton = ({ receipt }) => {
   return (
     <StyledForm onSubmit={handleClick}>
       <HelperText>Kwota do zapłaty</HelperText>
-      <ActionText
+      {/* <ActionText
         placeholder="0.00 zł"
         type="text"
         onChange={(event) => {
           setError("");
           setAmount(event.target.value);
         }}
-      ></ActionText>
+      ></ActionText> */}
+      <CurrencyInput
+        style={{ fontSize: "16px", padding: "8px 16px" }}
+        suffix=" PLN"
+        placeholder="0.00"
+        decimalsLimit={3}
+        onValueChange={(value, name) => {
+          setError("");
+          setAmount(value);
+        }}
+      />
       {error ? <ErrorMessage>{error}</ErrorMessage> : null}
       <StyledButton type="submit">Zaakceptuj</StyledButton>
       {display.visible ? (
