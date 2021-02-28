@@ -12,7 +12,7 @@ import FinishButton from "./finish_button";
 import TableCell from "./table_cell";
 import TableRow from "./table_row";
 import { convertDate, diffDays } from "./functions/convert_date";
-
+import DeleteIcon from "./deleteIcon";
 const StyledRow = styled(TableRow)`
   transition: all 0.2s;
   position: relative;
@@ -219,6 +219,7 @@ const ReceiptItem = ({ receipt, currentView, showUrgent }) => {
             <StyledRichTekst>
               {receipt.deleteReason || "brak powodu"}{" "}
             </StyledRichTekst>
+            <DeleteIcon id={receipt.id} />
           </StyledTextWrapper>
         ) : null}
 

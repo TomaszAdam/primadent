@@ -26,6 +26,24 @@ const AdminPanel = () => {
   const [data, setData] = useState(null);
   const [loading, setLoading] = useState(true);
 
+  const blinkTab = (message) => {
+    var oldTitle = document.title,
+      timeoutId,
+      blink = function () {
+        document.title = document.title == message ? " " : message;
+      },
+      clear = function () {
+        clearInterval(timeoutId);
+        document.title = oldTitle;
+        window.onmousemove = null;
+        timeoutId = null;
+      };
+
+    if (!timeoutId) {
+      timeoutId = setInterval(blink, 1000);
+      window.onmousemove = clear;
+    }
+  };
   useEffect(() => {
     const unsibscribe = firestore
       .collection("recepty")
@@ -40,6 +58,7 @@ const AdminPanel = () => {
           });
           setData(dataArray);
           setLoading(false);
+          blinkTab("*NOWA RECEPTA*");
           //console.log(dataArray);
         } else {
           console.log("empty collection");
