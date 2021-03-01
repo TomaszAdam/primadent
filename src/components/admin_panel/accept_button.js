@@ -175,19 +175,17 @@ const AcceptButton = ({ receipt }) => {
   return (
     <StyledForm onSubmit={handleClick}>
       <HelperText>Kwota do zapłaty</HelperText>
-      {/* <ActionText
-        placeholder="0.00 zł"
-        type="text"
-        onChange={(event) => {
-          setError("");
-          setAmount(event.target.value);
-        }}
-      ></ActionText> */}
+
       <CurrencyInput
         style={{ fontSize: "16px", padding: "8px 16px" }}
         suffix=" PLN"
-        placeholder="0.00"
-        decimalsLimit={3}
+        placeholder="0,00 PLN"
+        decimalsLimit={2}
+        allowNegativeValue={false}
+        disableGroupSeparators={true}
+        decimalSeparator=","
+        fixedDecimalLength={2}
+        decimalScale={2}
         onValueChange={(value, name) => {
           setError("");
           setAmount(value);
