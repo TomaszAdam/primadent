@@ -25,6 +25,7 @@ const AdminPanel = () => {
   const { currentUser } = useContext(AuthContext);
   const [data, setData] = useState(null);
   const [loading, setLoading] = useState(true);
+  const [newReceipt, setNewReceipt] = useState(false);
 
   const blinkTab = (message) => {
     var oldTitle = document.title,

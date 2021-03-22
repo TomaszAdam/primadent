@@ -51,7 +51,7 @@ const AcceptButton = ({ receipt }) => {
   const [amount, setAmount] = useState("");
   const [display, setDisplay] = useState({ visible: false });
   const [error, setError] = useState(null);
-
+  console.log(amount);
   const makePayUCall = () => {
     toast.info("Wysyłnie linku", {
       autoClose: 2500,
@@ -78,7 +78,7 @@ const AcceptButton = ({ receipt }) => {
             receiptID: receipt.id,
             name: receipt.name,
             email: receipt.email,
-            amount: `${amount * 100}`,
+            amount: `${parseFloat(amount) * 100}`,
             phone: receipt.phone,
             token: res.data,
             pesel: receipt.pesel,
@@ -183,8 +183,8 @@ const AcceptButton = ({ receipt }) => {
         decimalsLimit={2}
         allowNegativeValue={false}
         disableGroupSeparators={true}
-        decimalSeparator=","
-        fixedDecimalLength={2}
+        decimalSeparator="."
+        fixedDecimalLength={0}
         decimalScale={2}
         onValueChange={(value, name) => {
           setError("");
