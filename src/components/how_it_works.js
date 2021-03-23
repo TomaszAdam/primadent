@@ -31,7 +31,7 @@ const HowItWorks = () => {
         poprzez e-mail. Jeśli wszystko jest w porządku, wyślemy Ci link
         umożliwiający dokonanie płatności za usługę. Po otrzymaniu płatności,
         lekarz wystawi e-receptę i na telefon komórkowy otrzymasz kod recepty,
-        który wraz z nr pesel posłuży do weryfikacji e-recepty i odbioru leku w
+        który wraz z nr PESEL posłuży do weryfikacji e-recepty i odbioru leku w
         dowolnej aptece.
       </StyledText>
       {/* <Line /> */}

@@ -149,7 +149,7 @@ const EReceiptForm = ({ extraFields }) => {
 
     if (pesel === "" || !pesel.match(/^[0-9]+$/) || pesel.length !== 11) {
       setError({
-        pesel: "Pesel musi zawierać same cyfry i miec długość 11 znaków",
+        pesel: "PESEL musi zawierać same cyfry i miec długość 11 znaków",
       });
       window.scrollTo(0, event.target[4].offsetTop + 100);
       return null;

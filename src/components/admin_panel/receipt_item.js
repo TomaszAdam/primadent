@@ -179,7 +179,7 @@ const ReceiptItem = ({ receipt, currentView, showUrgent }) => {
         <MobileInfo>
           <TextLabel>Telefon</TextLabel>
           <p>{receipt.phone}</p>
-          <TextLabel>Pesel</TextLabel>
+          <TextLabel>PESEL</TextLabel>
           <p>{receipt.pesel}</p>
         </MobileInfo>
         <StyledTextWrapper>
