@@ -169,9 +169,13 @@ const NavBar = ({ links, isMainPage }) => {
           text="KONTAKT"
         />
         <MenuItem
+          style={{
+            border: "1px solid rgba(205, 107, 93, 1)",
+            color: "rgba(205, 107, 93, 1)",
+          }}
           setExpanded={setExpanded}
-          link="/e-recepta"
-          text="E-RECEPTA"
+          link="https://rejestracja.przychodnia-primadent.pl"
+          text="PORTAL PACJENTA"
         />
       </StyledMenu>
     </Navbar>

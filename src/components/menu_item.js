@@ -21,7 +21,7 @@ const StyledMenuItem = styled.div`
     padding: 4px;
   }
 `;
-const MenuItem = ({ link, text, setExpanded }) => {
+const MenuItem = ({ link, text, setExpanded, style = {} }) => {
   let isLocal = true;
 
   if (link.search("/") === -1) {
@@ -31,7 +31,7 @@ const MenuItem = ({ link, text, setExpanded }) => {
     isLocal = false;
   }
   return (
-    <StyledMenuItem onClick={() => setExpanded(false)}>
+    <StyledMenuItem style={style} onClick={() => setExpanded(false)}>
       {isLocal ? <Link to={link}>{text}</Link> : <a href={link}>{text}</a>}
     </StyledMenuItem>
   );
