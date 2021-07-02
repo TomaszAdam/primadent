@@ -32,7 +32,13 @@ const MenuItem = ({ link, text, setExpanded, style = {} }) => {
   }
   return (
     <StyledMenuItem style={style} onClick={() => setExpanded(false)}>
-      {isLocal ? <Link to={link}>{text}</Link> : <a href={link}>{text}</a>}
+      {isLocal ? (
+        <Link to={link}>{text}</Link>
+      ) : (
+        <a target="_blank" href={link}>
+          {text}
+        </a>
+      )}
     </StyledMenuItem>
   );
 };

@@ -4,6 +4,28 @@ import logo from "../../images/logo.png";
 import { navigate } from "gatsby";
 //components
 import MenuItem from "./menu_item";
+
+const StyledMenuItem = styled.div`
+  & a {
+    text-decoration: none;
+    color: inherit;
+    margin: 0 10px;
+    padding: 8px 16px;
+    border: 1px solid black;
+    transition: 0.8s;
+    cursor: pointer;
+    display: block;
+    background-color: rgba(205, 107, 93, 1);
+    color: rgba(205, 107, 93, 1);
+    &:hover {
+      color: black;
+    }
+  }
+
+  @media (max-width: 600px) {
+    padding: 4px;
+  }
+`;
 const Navbar = styled.nav`
   padding: 5px;
   box-shadow: 3px 0 5px rgba(0, 0, 0, 0.2);
@@ -168,12 +190,8 @@ const NavBar = ({ links, isMainPage }) => {
           link={isMainPage ? "CONTACT" : "/#CONTACT"}
           text="KONTAKT"
         />
-        <MenuItem
-          style={{
-            border: "1px solid rgba(205, 107, 93, 1)",
-            color: "rgba(205, 107, 93, 1)",
-          }}
-          setExpanded={setExpanded}
+        <StyledMenuItem
+          onClick={() => setExpanded(false)}
           link="https://rejestracja.przychodnia-primadent.pl"
           text="PORTAL PACJENTA"
         />
