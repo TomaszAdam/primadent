@@ -190,11 +190,14 @@ const NavBar = ({ links, isMainPage }) => {
           link={isMainPage ? "CONTACT" : "/#CONTACT"}
           text="KONTAKT"
         />
-        <StyledMenuItem
-          onClick={() => setExpanded(false)}
-          link="https://rejestracja.przychodnia-primadent.pl"
-          text="PORTAL PACJENTA"
-        />
+        <StyledMenuItem onClick={() => setExpanded(false)}>
+          <a
+            target="_blank"
+            href="https://rejestracja.przychodnia-primadent.pl"
+          >
+            PORTAL PACJENTA
+          </a>
+        </StyledMenuItem>
       </StyledMenu>
     </Navbar>
   );
