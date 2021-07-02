@@ -11,13 +11,13 @@ const StyledMenuItem = styled.div`
     color: inherit;
     margin: 0 10px;
     padding: 8px 16px;
-    border: 1px solid black;
+    border: 1px solid rgba(205, 107, 93, 1);
     transition: 0.8s;
     cursor: pointer;
     display: block;
-    background-color: rgba(205, 107, 93, 1);
     color: rgba(205, 107, 93, 1);
     &:hover {
+      background-color: rgba(205, 107, 93, 1);
       color: black;
     }
   }
