@@ -85,17 +85,18 @@ const StyledHoursPart = styled.div`
 
 const StyledMenuItem = styled.a`
   padding: 8px 16px;
-  border: 1px solid black;
+  border: 1px solid rgba(205, 107, 93, 1);
   transition: 0.8s;
   cursor: pointer;
   text-decoration: none;
-  color: inherit;
+  color: rgba(205, 107, 93, 1);
   display: block;
   width: 135px;
   white-space: nowrap;
 
   &:hover {
     background-color: rgba(205, 107, 93, 1);
+    color: black;
   }
 `;
 const ClinicTitle = styled.div`
