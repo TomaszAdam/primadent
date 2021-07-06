@@ -141,11 +141,11 @@ const Clinic = ({
         <br />
         {eRejestracja ? (
           <StyledMenuItem
-            href="https://primadent.optimed24.pl/olr/page/index.xhtml"
+            href="https://rejestracja.przychodnia-primadent.pl"
             rel="_nofollow"
             target="_blank"
           >
-            E-REJESTRACJA{" "}
+            PORTAL PACJENTA{" "}
           </StyledMenuItem>
         ) : null}
         {zdjeciePrzychodni == null ? null : (
