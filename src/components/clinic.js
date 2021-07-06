@@ -91,7 +91,7 @@ const StyledMenuItem = styled.a`
   text-decoration: none;
   color: rgba(205, 107, 93, 1);
   display: block;
-  width: 135px;
+  width: max-content;
   white-space: nowrap;
 
   &:hover {
