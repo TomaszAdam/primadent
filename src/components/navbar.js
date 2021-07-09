@@ -4,6 +4,28 @@ import logo from "../../images/logo.png";
 import { navigate } from "gatsby";
 //components
 import MenuItem from "./menu_item";
+
+const StyledMenuItem = styled.div`
+  & a {
+    text-decoration: none;
+    color: inherit;
+    margin: 0 10px;
+    padding: 8px 16px;
+    border: 1px solid rgba(205, 107, 93, 1);
+    transition: 0.8s;
+    cursor: pointer;
+    display: block;
+    color: rgba(205, 107, 93, 1);
+    &:hover {
+      background-color: rgba(205, 107, 93, 1);
+      color: black;
+    }
+  }
+
+  @media (max-width: 600px) {
+    padding: 4px;
+  }
+`;
 const Navbar = styled.nav`
   padding: 5px;
   box-shadow: 3px 0 5px rgba(0, 0, 0, 0.2);
@@ -168,11 +190,14 @@ const NavBar = ({ links, isMainPage }) => {
           link={isMainPage ? "CONTACT" : "/#CONTACT"}
           text="KONTAKT"
         />
-        <MenuItem
-          setExpanded={setExpanded}
-          link="/e-recepta"
-          text="E-RECEPTA"
-        />
+        <StyledMenuItem onClick={() => setExpanded(false)}>
+          <a
+            target="_blank"
+            href="https://rejestracja.przychodnia-primadent.pl"
+          >
+            PORTAL PACJENTA
+          </a>
+        </StyledMenuItem>
       </StyledMenu>
     </Navbar>
   );
