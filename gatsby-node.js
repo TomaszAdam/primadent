@@ -14,6 +14,13 @@ exports.onCreatePage = async ({ page, actions }) => {
 };
 
 exports.onCreateWebpackConfig = ({ actions, stage }) => {
+  actions.setWebpackConfig({
+    resolve: {
+      fallback: {
+        path: require.resolve("path-browserify"),
+      },
+    },
+  });
   if (stage === "build-html") {
     actions.setWebpackConfig({
       module: {
