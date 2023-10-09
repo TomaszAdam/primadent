@@ -38,6 +38,7 @@
     "leaflet": "^1.7.1",
     "node-fetch": "^2.6.1",
     "path-browserify": "^1.0.1",
+    "postcss": "^8.4.31",
     "react": "^16.13.1",
     "react-app-polyfill": "^2.0.0",
     "react-cookie": "^4.0.3",
